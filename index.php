@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
 ?>
   <tr>
     <td><?=$row["course_id"]?></td>
-    <td><?=$roq["description"]?></td>
+    <td><?=$row["description"]?></td>
   </tr>
 <?php
   }
