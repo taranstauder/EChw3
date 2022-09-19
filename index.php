@@ -11,7 +11,6 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Course Number</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -29,7 +28,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT course_id, prefix, description from course";
+$sql = "SELECT course_id, description from course";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -38,7 +37,6 @@ if ($result->num_rows > 0) {
 ?>
   <tr>
     <td><?=$row["course_id"]?></td>
-    <td><?=$row["prefix"]?></td>
     <td><?=$roq["description"]?></td>
   </tr>
 <?php
