@@ -11,7 +11,8 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Name</th>
+      <th>Course Number</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>
