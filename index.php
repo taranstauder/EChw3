@@ -9,57 +9,10 @@
   <body>
     <?php include("includes/design-top.php");?>
     <?php include("includes/navigation.php");?>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Prefix</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php
-$servername = "localhost";
-$username = "tstauouc_suser";
-$password = "{kmXl,4Kf[Ea";
-$dbname = "tstauouc_sample";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT course_id, prefix, description from course";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-?>
-  <tr>
-    <td><?=$row["course_id"]?></td>
-    <td><?=$row["prefix"]?></td>
-    <td><?=$row["description"]?></td>
-  </tr>
-<?php
-  }
-} else {
-  echo "0 results";
-}
-$conn->close();
-?>
-  </tbody>
-    </table>
-    <h1>Hello, world!</h1>
-    <form action="handlepost.php" method="get">
-Name: <input type="text" name="name"><br>
-E-mail: <input type="text" name="email"><br>
-<input type="submit">
-</form>
     
-    <a class="btn btn-primary" href="page2.html" role="button">Page 2</a>
+    <h1>Hello!</h1>
+    <p>This is my website for Homework 3. You will find tabs along the navigation bar for each table in my database. The instructor table is interactive.</p>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>
 </html>
