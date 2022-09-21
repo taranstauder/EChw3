@@ -9,7 +9,7 @@
   <body>
         <?php include("includes/design-top.php");?>
     <?php include("includes/navigation.php");?>
-    <h1>Instructors</h1>
+    <h1>Courses</h1>
 <table class="table table-striped">
   <thead>
     <tr>
