@@ -4,10 +4,16 @@
 	    <a class="nav-link <?php if ($CURRENT_PAGE == "Index") {?>active<?php }?>" href="index.php">Home</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link <?php if ($CURRENT_PAGE == "Page 2") {?>active<?php }?>" href="handlepost.php">Page 2</a>
+	    <a class="nav-link <?php if ($CURRENT_PAGE == "Course") {?>active<?php }?>" href="course.php">Page 2</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link <?php if ($CURRENT_PAGE == "Page 3") {?>active<?php }?>" href="page3.php">Page 3</a>
+	    <a class="nav-link <?php if ($CURRENT_PAGE == "Instructor") {?>active<?php }?>" href="instructors.php">Page 3</a>
+	  </li>
+	<li class="nav-item">
+	    <a class="nav-link <?php if ($CURRENT_PAGE == "Take") {?>active<?php }?>" href="take.php">Page 3</a>
+	  </li>
+	<li class="nav-item">
+	    <a class="nav-link <?php if ($CURRENT_PAGE == "Student") {?>active<?php }?>" href="student.php">Page 3</a>
 	  </li>
 	</ul>
 </div>
