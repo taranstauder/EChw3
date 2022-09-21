@@ -4,16 +4,16 @@
 	    <a class="nav-link <?php if ($CURRENT_PAGE == "Index") {?>active<?php }?>" href="index.php">Home</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link <?php if ($CURRENT_PAGE == "Course") {?>active<?php }?>" href="course.php">Page 2</a>
+	    <a class="nav-link <?php if ($CURRENT_PAGE == "Course") {?>active<?php }?>" href="course.php">Course</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link <?php if ($CURRENT_PAGE == "Instructor") {?>active<?php }?>" href="instructors.php">Page 3</a>
+	    <a class="nav-link <?php if ($CURRENT_PAGE == "Instructor") {?>active<?php }?>" href="instructors.php">Instructors</a>
 	  </li>
 	<li class="nav-item">
-	    <a class="nav-link <?php if ($CURRENT_PAGE == "Take") {?>active<?php }?>" href="take.php">Page 3</a>
+	    <a class="nav-link <?php if ($CURRENT_PAGE == "Take") {?>active<?php }?>" href="take.php">Take</a>
 	  </li>
 	<li class="nav-item">
-	    <a class="nav-link <?php if ($CURRENT_PAGE == "Student") {?>active<?php }?>" href="student.php">Page 3</a>
+	    <a class="nav-link <?php if ($CURRENT_PAGE == "Student") {?>active<?php }?>" href="student.php">Student</a>
 	  </li>
 	</ul>
 </div>
