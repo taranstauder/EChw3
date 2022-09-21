@@ -7,7 +7,7 @@
 	    <a class="nav-link <?php if ($CURRENT_PAGE == "Course") {?>active<?php }?>" href="course.php">Course</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link <?php if ($CURRENT_PAGE == "Instructor") {?>active<?php }?>" href="instructors.php">Instructors</a>
+	    <a class="nav-link <?php if ($CURRENT_PAGE == "Instructor") {?>active<?php }?>" href="instructor.php">Instructors</a>
 	  </li>
 	<li class="nav-item">
 	    <a class="nav-link <?php if ($CURRENT_PAGE == "Take") {?>active<?php }?>" href="take.php">Take</a>
