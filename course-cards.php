@@ -24,7 +24,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT course_id, description from course";
+$sql = "SELECT student_id, student_name from student";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -33,10 +33,10 @@ if ($result->num_rows > 0) {
 ?>
    <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><?=$row["description"]?></h5>
+      <h5 class="card-title"><?=$row["student_name"]?></h5>
       <p class="card-text"><ul>
 <?php
-    $section_sql = "select c.description from take t join student s on s.student_id = t.student_id join course c on c.course_id = t.course_id where i.course_id=" . $row["course_id"];
+    $section_sql = "select s.student_name from take t join course c on t.student_id = c.student_id join student s on s.course_id = t.course_id where i.student_id=" . $row["student_id"];
     $section_result = $conn->query($section_sql);
     
     while($section_row = $section_result->fetch_assoc()) {
