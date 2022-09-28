@@ -41,7 +41,6 @@ if ($result->num_rows > 0) {
 ?>
   <tr>
     <td><?=$row["instructor_id"]?></td>
-    <td><a href="course_instructor.php?id=<?=$row["instructor_id"]?>"><?=$row["instructor_name"]?></a></td>
     <td><?=$row["instructor_office"]?></td>
   </tr>
 <?php
