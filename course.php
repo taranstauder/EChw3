@@ -43,6 +43,12 @@ if ($result->num_rows > 0) {
     <td><?=$row["course_id"]?></td>
 <td><?=$row["prefix"]?></td>
     <td><?=$row["description"]?></td>
+    <td>
+      <form method="post" action="students_enrolled.php">
+        <input type="hidden" name="id" value="<?=$row["course_id"]?>" />
+        <input type="submit" value="Students" />
+      </form>
+    </td>
   </tr>
 <?php
   }
