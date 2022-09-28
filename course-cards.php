@@ -36,11 +36,11 @@ if ($result->num_rows > 0) {
       <h5 class="card-title"><?=$row["student_name"]?></h5>
       <p class="card-text"><ul>
 <?php
-    $section_sql = "select s.student_name from course c join take t on t.register_id = c.register_id join student s on s.student_id = c.student_id where c.register_id=" . $row["register_id"];
-    $section_result = $conn->query($section_sql);
+    $section_sql = "select c.description from take t join student s on s.student_id = t.student_id join course c on c.course_id = s.course_id where i.student_id=" . $row["student_id"];
+   $section_result = $conn->query($section_sql);
     
     while($section_row = $section_result->fetch_assoc()) {
-      echo "<li>" . $section_row["student_name"] . "</li>";
+      echo "<li>" . $section_row["description"] . "</li>";
     }
 ?>
       </ul></p>
