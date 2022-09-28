@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   </head>
   <body>
-        <?php include("includes/design-top.php");?>
+    <?php include("includes/design-top.php");?>
     <?php include("includes/navigation.php");?>
     <h1>Instructors</h1>
 <table class="table table-striped">
@@ -15,7 +15,7 @@
     <tr>
       <th>ID</th>
       <th>Name</th>
-      <th>Office</th>
+      <th>Office Number</th>
     </tr>
   </thead>
   <tbody>
@@ -32,7 +32,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT instructor_id, instructor_name, instructor_office from instructor;
+$sql = "SELECT instructor_id, instructor_name, instructor_office from instructor";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
