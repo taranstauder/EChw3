@@ -36,7 +36,7 @@ if ($result->num_rows > 0) {
       <h5 class="card-title"><?=$row["student_name"]?></h5>
       <p class="card-text"><ul>
 <?php
-    $section_sql = "select c.description from student s join take t on s.student_id = t.student_id join course c on c.course_id = s.course_id where s.student_id=" . $row["student_id"];
+    $section_sql = "select c.description from student s join take t on s.student_id = t.student_id join course c on c.course_id = s.course_id where c.student_id=" . $row["student_id"];
    $section_result = $conn->query($section_sql);
     
     while($section_row = $section_result->fetch_assoc()) {
