@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Courses</title>
+    <title>Students</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   </head>
   <body>
@@ -16,7 +16,7 @@ $servername = "localhost";
 $username = "tstauouc_suser";
 $password = "{kmXl,4Kf[Ea";
 $dbname = "tstauouc_sample";
-
+  
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -36,11 +36,11 @@ if ($result->num_rows > 0) {
       <h5 class="card-title"><?=$row["student_name"]?></h5>
       <p class="card-text"><ul>
 <?php
-    $section_sql = "select s.student_name from take t join course c on t.student_id = c.student_id join student s on s.course_id = t.course_id where i.student_id=" . $row["student_id"];
+    $section_sql = "select s.student_name from course c join take t on t.register_id = c.register_id join student s on s.student_id = c.student_id where c.register_id=" . $row["register_id"];
     $section_result = $conn->query($section_sql);
     
     while($section_row = $section_result->fetch_assoc()) {
-      echo "<li>" . $section_row["description"] . "</li>";
+      echo "<li>" . $section_row["student_name"] . "</li>";
     }
 ?>
       </ul></p>
