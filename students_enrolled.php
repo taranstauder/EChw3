@@ -34,7 +34,7 @@ if ($conn->connect_error) {
 }
 $cid = $_POST['id'];
 //echo $iid;
-$sql = "select student_name, c.course_id, c.prefix, c.description from student s join take t on t.register_id = s.register_id join course c on c.course_id = s.course_id where c.course_id=" . $cid;
+$sql = "select student_name, c.course_id, c.prefix, c.description from student s join take t on s.student_id = t.student_id join course c on c.course_id = s.course_id where s.course_id=" . $cid;
 //echo $sql;
     $result = $conn->query($sql);
 
