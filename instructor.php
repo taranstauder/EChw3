@@ -32,7 +32,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "select instructor_id, instructor_name, instructor_office from instructor;
+$sql = "SELECT instructor_id, instructor_name, instructor_office from instructor;
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -41,6 +41,7 @@ if ($result->num_rows > 0) {
 ?>
   <tr>
     <td><?=$row["instructor_id"]?></td>
+    <td><a href="course_instructor.php?id=<?=$row["instructor_id"]?>"><?=$row["instructor_name"]?></a></td>
     <td><?=$row["instructor_office"]?></td>
   </tr>
 <?php
