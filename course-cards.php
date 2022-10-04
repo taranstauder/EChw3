@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
     $section_result = $conn->query($section_sql);
     
     while($section_row = $section_result->fetch_assoc()) {
-      echo "<li>" . $section_row["student_name"] . "</li>";
+      echo "<li>" . $section_row["description"] . "</li>";
     }
 ?>
       </ul></p>
