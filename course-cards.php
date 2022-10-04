@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Instructors</title>
+    <title>Enrollment</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   </head>
   <body>
     <?php include("includes/design-top.php");?>
     <?php include("includes/navigation.php");?>
-    <h1>Instructors</h1>
+    <h1>Enrollment</h1>
 <div class="card-group">
     <?php
 $servername = "localhost";
@@ -24,7 +24,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
   
-$sql = "SELECT instructor_id, instructor_name from instructor";
+$sql = "SELECT student_id, student_name from student";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -33,14 +33,14 @@ if ($result->num_rows > 0) {
 ?>
    <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><?=$row["description"]?></h5>
+      <h5 class="card-title"><?=$row["student_name"]?></h5>
       <p class="card-text"><ul>
 <?php      
-    $section_sql = "select c.description from course c join instructor i on c.course_id = i.course_id join where i.instructor_id=" . $row["instructor_id"];
+    $section_sql = "select c.description from take t join student s on s.student_id = t.student_id join course c on c.course_id = t.course_id where s.student_id=" . $row["student_id"];
     $section_result = $conn->query($section_sql);
     
     while($section_row = $section_result->fetch_assoc()) {
-      echo "<li>" . $section_row["description"] . "</li>";
+      echo "<li>" . $section_row["student_name"] . "</li>";
     }
 ?>
       </ul></p>
