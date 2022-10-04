@@ -15,8 +15,10 @@
     <tr>
       <th>ID</th>
       <th>Prefix</th>
-      <th>Description</th>
-      <th>Student Name</th>
+      <th>Number</th>
+      <th>Section</th>
+      <th>Instructor</th>
+      <th>Instructor Office</th>
     </tr>
   </thead>
   <tbody>
@@ -33,9 +35,9 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 $cid = $_POST['id'];
-//echo $iid;
-$sql = "select student_name, c.course_id, c.prefix, c.description from student s join take t on s.student_id = t.student_id join course c on c.course_id = s.course_id where s.course_id=" . $cid;
-//echo $sql;
+
+$sql = "select course_id, description, i.instructor_name, c.prefix, c.number, i.instructor_office from course c join instructor i on i.instructor_id = c.instructor_id where c.instructor_id=" . $cid;
+
     $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -44,9 +46,11 @@ if ($result->num_rows > 0) {
 ?>
   <tr>
     <td><?=$row["course_id"]?></td>
-    <td><?=$row["prefix"]?></td>
     <td><?=$row["description"]?></td>
-    <td><?=$row["student_name"]?></td>
+    <td><?=$row["number"]?></td>
+    <td><?=$row["prefix"]?></td>
+    <td><?=$row["instructor_name"]?></td>
+    <td><?=$row["instructor_office"]?></td>
   </tr>
 <?php
   }
