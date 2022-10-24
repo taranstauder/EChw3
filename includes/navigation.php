@@ -16,7 +16,7 @@
 	    <a class="nav-link <?php if ($CURRENT_PAGE == "Student") {?>active<?php }?>" href="student.php">Student</a>
 	  </li>	
 	<li class="nav-item">
-	    <a class="nav-link <?php if ($CURRENT_PAGE == "Drop Down") {?>active<?php }?>" href="course-cards.php">Drop Down</a>
+	    <a class="nav-link <?php if ($CURRENT_PAGE == "Cards") {?>active<?php }?>" href="course-cards.php">Cards</a>
 	  </li>
 	</ul>
 </div>
